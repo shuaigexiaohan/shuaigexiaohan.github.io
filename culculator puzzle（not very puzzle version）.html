@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>calculator</title>
+	</head>
+	<body style="background-color:lavender">
+    <h1 class="content"; style="text-align: center;">宇涵牌计算器</h1>
+    <p style="background-color:lightskyblue; color:#fefdff";>（目前仅支持加减乘除四种运算方式）</p>
+    <p style="border-style:solid; border-width:1px;padding:20px";>（尝试在运算符处填写加减乘除之外的其他内容将有十分恐怖的后果出现）</p>
+		第一个数字：<input id="firstnum" type="number" />
+		<br />
+		运算符：<input id="yunsuanfu" type="text" />
+		<br />
+		第二个数字：<input id="secondnum" type="number" />
+		<br />
+		<button onclick="addtwonum()">运算</button>
+
+		<script>
+			function addtwonum() {
+				var a = document.getElementById("firstnum").value;
+				var anum = parseInt(a)
+				var b = document.getElementById("secondnum").value;
+				var bnum = parseInt(b)
+
+				var yunsuan = document.getElementById("yunsuanfu").value;
+				var c;
+				if(yunsuan=='加'||yunsuan=='+')
+				{
+					c=anum+bnum
+				}
+				            else if(yunsuan=='减'||yunsuan=='-')
+				            {
+				            	c=anum-bnum
+				            }
+				else if(yunsuan=='乘'||yunsuan=='*')
+				{
+					c=anum*bnum
+				}
+				else if(yunsuan=='除'||yunsuan=='/')
+				{
+					c=anum/bnum
+				}
+				else{
+					c='十分恐怖的后果'
+				}
+				alert(c)
+			}
+		</script>
+    <p>如果觉得运算的又快又准请点亮灯泡鼓励一下我</p>
+    <img id="bulb" src="pic_bulboff.gif" onclick="bulbonoff()" />
+		<script>
+			var isClose = true;
+
+			function bulbonoff() {
+				var mybulb = document.getElementById("bulb")
+				if (isClose == true) {
+					mybulb.src = "pic_bulbon.gif"
+					isClose = false;
+				} else {
+					mybulb.src = "pic_bulboff.gif";
+					isClose = true;
+				}
+			}
+      </script>
+	</body>
+</html>
